@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist", //donde se va compilar en produccion
+        "rootDir" : "./src",
+        "lib": ["ESNext"],   //bibliotecas de javascript disponibles pa type-
+        "target": "ESNext",
+        "moduleResolution": "nodenext",     //forma de compilacion, typado
+        "module": "NodeNext",
+        "strict": false,     //modo estricto
+        "sourceMap": true,   //debuggear, acceso al codigo type en produccion
+        "esModuleInterop": true,  //pueda utilizar modulos de JS 
+        "declaration": true,
+    },
+    "include": ["src/**/*.ts"]  //compilar todos los archivos .ts dentro de src/
+
+} 
