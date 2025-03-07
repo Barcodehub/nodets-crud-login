@@ -1,13 +1,18 @@
-import express from 'express'
+import express from 'express';
+import cors from 'cors';
+import productRoutes from './routes/productRoutes';
+import connectDB from './config/db';
 
-const app = express()
+const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hola mundo')
-})
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-const port = process.env.PORT || 4000
+// Routes
+app.use('/api/products', productRoutes);
 
-app.listen(port, ()=> {
-    console.log('servidor funcionando', port)
-})
+// Connect to MongoDB
+connectDB();
+
+export default app;
