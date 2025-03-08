@@ -7,14 +7,18 @@ import {
   deleteProduct,
   getProductsByCategory,
 } from '../controllers/productController';
+import { authenticate } from '../middleware/authMiddleware';
+import { authorize } from '../middleware/roleMiddleware';
 
 const router = Router();
 
 router.get('/', getProducts);
 router.get('/:id', getProductById);
-router.post('/', createProduct);
-router.put('/:id', updateProduct);
-router.delete('/:id', deleteProduct);
 router.get('/category/:category', getProductsByCategory);
+
+// Rutas protegidas
+router.post('/', authenticate, authorize(['admin']), createProduct);
+router.put('/:id', authenticate, authorize(['admin']), updateProduct);
+router.delete('/:id', authenticate, authorize(['admin']), deleteProduct);
 
 export default router;
