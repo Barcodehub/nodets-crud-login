@@ -21,7 +21,12 @@ Este proyecto es una API RESTful desarrollada con Express.js y TypeScript que pe
    ```
 4. Inicia el servidor:
    ```bash
-   npm start
+   - npm run build
+   - npm start
+
+   - o en desarrollo:
+
+   - npm run dev
    ```
    El servidor estará disponible en [http://localhost:3000](http://localhost:3000).
 

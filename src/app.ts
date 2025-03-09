@@ -3,7 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
-import setupRoutes from './routes/setuproutes';
+import setupRoutes from './routes/setupRoutes';
 import connectDB from './config/db';
 import dotenv from 'dotenv';
 import initializeRoles from './scripts/initializeRoles';
